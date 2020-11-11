@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RailsInstagram</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", media: "all", 'data-turbolinks-track': "reload" %>
+    <%= javascript_pack_tag "application", 'data-turbolinks-track': "reload" %>
+  </head>
+
+  <body>
+    <!--Navigation-->
+    <%= render "shared/navbar" if current_user %>
+
+    <main class="container" style="min-height: 500px;">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <%= yield %>
+    </main>
+
+    <!--Footer-->
+    <%= render "shared/footer" %>
+
+    <script type="text/javascript">
+      toastr.success('Have fun storming the castle!', 'Miracle Max Says')
+    </script>
+  </body>
+</html>
